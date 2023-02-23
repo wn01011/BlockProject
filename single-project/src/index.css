@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Bebas Neue", "Do Gyeon";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-select: none;
+}
+a {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+a:hover {
+  color: #2850bd;
+}
+
+input,
+input:focus,
+::-webkit-input-placeholder {
+  border: 0 solid black;
+  outline: none;
+  /* background-color: rgb(70, 70, 70); */
+  padding: 5px;
+}
+input:focus {
+  box-shadow: rgba(201, 201, 201, 0.2) 0px 12px 6px 0px,
+    rgba(192, 192, 192) 0px 2px 4px 0px,
+    rgba(231, 231, 231, 0.2) 0px 0px 0px 1px inset;
+}
+
+.cancle {
+  text-decoration: line-through;
+  text-decoration-color: tomato;
+  text-decoration-thickness: 2px;
+}
