@@ -1,12 +1,12 @@
 const { Router } = require("express");
 
-const router = Router();
-const web3 = require("./web3.js");
+const router1 = Router();
+const { router } = require("./web3.js");
 
-router.post("/", (req, res) => {
+router1.post("/", (req, res) => {
   res.send("server connect");
 });
 
-router.use("/web3", web3);
+router1.use("/web3", router);
 
-module.exports = router;
+module.exports = router1;

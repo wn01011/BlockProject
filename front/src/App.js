@@ -28,8 +28,8 @@ function App() {
           element={<LatestBlockContainer />}
         />
         <Route
-          path="/latestTransaction/:txHash" 
-          element={<LatestTransactionContainer></LatestTransactionContainer>} 
+          path="/latestTransaction/:txHash"
+          element={<LatestTransactionContainer></LatestTransactionContainer>}
         />
         <Route
           path="/address/:address"

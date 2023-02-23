@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { getTimeFunc, weiToEther } from "../../../utils";
+import { getTimeFunc, weiToEther, sliceText } from "../../../utils";
 import { Link } from "react-router-dom";
 
 const TxCardComponent = ({ title, txs, dark }) => {
@@ -24,16 +24,18 @@ const TxCardComponent = ({ title, txs, dark }) => {
               <div key={`${title}-${index}`} className={"tx"}>
                 <div>
                   <Link to={`/latestTransaction/${item.hash}`}>
-                    {item.hash}
+                    {sliceText(item.hash)}
                   </Link>
                 </div>
                 <div>{item.blockNumber}</div>
                 <div>{timestamp.text}</div>
                 <div>
-                  <Link to={`/address/${item.from}`}>{item.from}</Link>
+                  <Link to={`/address/${item.from}`}>
+                    {sliceText(item.from)}
+                  </Link>
                 </div>
                 <div>
-                  <Link to={`/address/${item.to}`}>{item.to}</Link>
+                  <Link to={`/address/${item.to}`}>{sliceText(item.to)}</Link>
                 </div>
                 <div>{weiToEther(item.value)} Ether</div>
               </div>

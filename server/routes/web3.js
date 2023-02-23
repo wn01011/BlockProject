@@ -107,7 +107,7 @@ router.route("/getWallet").post(async (req, res) => {
 
 router.route("/getBlockTableCount").post(async (req, res) => {
   const count = await getBlockTableCount();
-  res.send(+count);
+  res.send(count);
 });
 
 router.route("/getTransactionsByFromAndTo").post(async (req, res) => {
@@ -162,7 +162,8 @@ async function getBlockNumber() {
 
 async function getBlockTableCount() {
   const blockNumber = await BlockTable.count();
-  return { count: blockNumber };
+  console.log(blockNumber);
+  return { count: +blockNumber };
 }
 
 async function getTransactionNumber(_blockNumber) {
@@ -294,8 +295,6 @@ webSocket.eth
 async function BlockSetting() {
   const blockNumber = await getBlockNumber();
   const dbBlockNumber = await getBlockTableCount();
-  if (dbBlockNumber != 0) return;
-
   const blockArray = [];
   for (let i = 0; i < blockNumber; ++i) {
     const curBlock = await getBlock(i);
@@ -306,6 +305,4 @@ async function BlockSetting() {
   }
 }
 
-BlockSetting();
-
-module.exports = router;
+module.exports = { BlockSetting, router };

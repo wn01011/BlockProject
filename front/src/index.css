@@ -16,6 +16,9 @@ a {
   color: inherit;
   cursor: pointer;
   text-decoration: none;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 a:hover {
   color: #2850bd;

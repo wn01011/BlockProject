@@ -7,6 +7,7 @@ const path = require("path");
 const routes = require("./routes/index.js");
 const cors = require("cors");
 dotenv.config();
+const { BlockSetting } = require("./routes/web3");
 
 const { sequelize } = require("./models/index.js");
 
@@ -52,8 +53,10 @@ app.use(
 app.use("/api", routes);
 
 sequelize
-  .sync({ force: false })
-  .then(() => {})
+  .sync({ force: true })
+  .then(() => {
+    BlockSetting();
+  })
   .catch((err) => {
     console.error(err);
   });

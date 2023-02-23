@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { sliceText } from "../utils";
 
 const FooterComponent = () => {
   const dark = useSelector((state) => state.util.dark);
@@ -75,7 +76,7 @@ const FooterComponent = () => {
           Donations:{" "}
           <span>
             <Link to={`/address/0xfC052594Fb4Ca05A8c94bf2EBC535c11a40669d3`}>
-              0xfC052594Fb4Ca05A8c94bf2EBC535c11a40669d3
+              {sliceText("0xfc052594fb4ca05a8c94bf2ebc535c11a40669d3")}
             </Link>
           </span>
         </div>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { getTimeFunc } from "../utils";
+import { getTimeFunc, sliceText } from "../utils";
 import { useSelector } from "react-redux";
 
 const MainComponent = ({
@@ -81,7 +81,9 @@ const MainComponent = ({
                 <div className={"middle"}>
                   <span>
                     Fee Recipient{" "}
-                    <Link to={`/address/${item.miner}`}>{item.miner}</Link>
+                    <Link to={`/address/${item.miner}`}>
+                      {sliceText(item.miner)}
+                    </Link>
                   </span>
                   <span>{txLen} txns</span>
                 </div>
@@ -133,7 +135,7 @@ const MainComponent = ({
                   <div>
                     <span>
                       <Link to={`/latestTransaction/${item.hash}`}>
-                        {item.hash}
+                        {sliceText(item.hash)}
                       </Link>
                     </span>
                     <span></span>
@@ -141,10 +143,14 @@ const MainComponent = ({
                 </div>
                 <div className={"middle"}>
                   <span>
-                    <Link to={`/address/${item.from}`}>from : {item.from}</Link>
+                    <Link to={`/address/${item.from}`}>
+                      from : {sliceText(item.from)}
+                    </Link>
                   </span>
                   <span>
-                    <Link to={`/address/${item.to}`}>to : {item.to}</Link>
+                    <Link to={`/address/${item.to}`}>
+                      to : {sliceText(item.to)}
+                    </Link>
                   </span>
                 </div>
                 <div className={"right"}>
@@ -397,7 +403,7 @@ const LatestBlockBox = styled.div`
       }
     }
     .middle {
-      width: 45%;
+      width: 35%;
       display: flex;
       flex-direction: column;
       text-overflow: ellipsis;
@@ -406,7 +412,7 @@ const LatestBlockBox = styled.div`
     }
     .right {
       display: flex;
-      width: 15%;
+      width: 25%;
       & > span {
         overflow: hidden;
         text-overflow: ellipsis;
@@ -468,7 +474,7 @@ const LatestTransactionBox = styled.div`
       }
     }
     .middle {
-      width: 55%;
+      width: 35%;
       display: flex;
       flex-direction: column;
       text-overflow: ellipsis;
@@ -476,7 +482,7 @@ const LatestTransactionBox = styled.div`
       white-space: nowrap;
     }
     .right {
-      width: 15%;
+      width: 35%;
       & > span {
         padding: 5px 10px;
         white-space: nowrap;

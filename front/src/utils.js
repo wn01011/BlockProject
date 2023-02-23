@@ -30,4 +30,11 @@ function weiToEther(_wei) {
   return ether;
 }
 
-export { getTimeFunc, weiToEther };
+function sliceText(_text) {
+  if (_text?.toString().length < 10) return _text;
+  let firstText = _text?.toString().slice(0, 5);
+  let secondText = _text?.toString().slice(-5);
+  return firstText + "..." + secondText;
+}
+
+export { getTimeFunc, weiToEther, sliceText };

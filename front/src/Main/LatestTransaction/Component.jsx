@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { sliceText } from "../../utils";
 
 const LatestTransactionComponent = ({ transaction, timestamp }) => {
   return (
@@ -8,7 +9,7 @@ const LatestTransactionComponent = ({ transaction, timestamp }) => {
       <DataBox>
         <div>
           <span>Transaction Hash:</span>
-          <span>{transaction.hash}</span>
+          <span>{sliceText(transaction.hash)}</span>
         </div>
         <div>
           <span>Block:</span>
@@ -26,13 +27,17 @@ const LatestTransactionComponent = ({ transaction, timestamp }) => {
         <div>
           <span>From:</span>
           <span>
-            <Link to={`/address/${transaction.from}`}>{transaction.from}</Link>
+            <Link to={`/address/${transaction.from}`}>
+              {sliceText(transaction.from)}
+            </Link>
           </span>
         </div>
         <div>
           <span>To:</span>
           <span>
-            <Link to={`/address/${transaction.to}`}>{transaction.to}</Link>
+            <Link to={`/address/${transaction.to}`}>
+              {sliceText(transaction.to)}
+            </Link>
           </span>
         </div>
         <div>
