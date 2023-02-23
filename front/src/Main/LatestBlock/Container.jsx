@@ -28,9 +28,16 @@ const LatestBlockContainer = () => {
           });
       });
 
-    axios.post("/api/web3/getBlockNumber").then(({ data }) => {
-      setMaxHeight(data);
-    });
+    axios.post("/api/web3/getBlockTableCount").then(
+      ({
+        data: {
+          count: { count },
+        },
+      }) => {
+        console.log(count);
+        setMaxHeight(count);
+      }
+    );
   }, [blockId]);
   return (
     <>
