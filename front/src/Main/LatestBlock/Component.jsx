@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { sliceText } from "../../utils";
 
 const LatestBlockComponent = ({
   block,

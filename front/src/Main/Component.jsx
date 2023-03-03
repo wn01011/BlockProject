@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { getTimeFunc, sliceText } from "../utils";
+import { getTimeFunc } from "../utils";
 import { useSelector } from "react-redux";
 
 const MainComponent = ({
@@ -81,9 +81,7 @@ const MainComponent = ({
                 <div className={"middle"}>
                   <span>
                     Fee Recipient{" "}
-                    <Link to={`/address/${item.miner}`}>
-                      {sliceText(item.miner)}
-                    </Link>
+                    <Link to={`/address/${item.miner}`}>{item.miner}</Link>
                   </span>
                   <span>{txLen} txns</span>
                 </div>
@@ -135,7 +133,7 @@ const MainComponent = ({
                   <div>
                     <span>
                       <Link to={`/latestTransaction/${item.hash}`}>
-                        {sliceText(item.hash)}
+                        {item.hash}
                       </Link>
                     </span>
                     <span></span>
@@ -143,14 +141,10 @@ const MainComponent = ({
                 </div>
                 <div className={"middle"}>
                   <span>
-                    <Link to={`/address/${item.from}`}>
-                      from : {sliceText(item.from)}
-                    </Link>
+                    <Link to={`/address/${item.from}`}>from : {item.from}</Link>
                   </span>
                   <span>
-                    <Link to={`/address/${item.to}`}>
-                      to : {sliceText(item.to)}
-                    </Link>
+                    <Link to={`/address/${item.to}`}>to : {item.to}</Link>
                   </span>
                 </div>
                 <div className={"right"}>

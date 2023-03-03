@@ -294,14 +294,20 @@ webSocket.eth
 
 async function BlockSetting() {
   const blockNumber = await getBlockNumber();
-  const dbBlockNumber = await getBlockTableCount();
   const blockArray = [];
   for (let i = 0; i < blockNumber; ++i) {
     const curBlock = await getBlock(i);
     blockArray[i] = curBlock;
-    AddBlockToDB({
-      ...curBlock,
+    const curTableBlock = await BlockTable.findOne({
+      where: {
+        number: i,
+      },
     });
+    if (!curTableBlock) {
+      AddBlockToDB({
+        ...curBlock,
+      });
+    }
   }
 }
 

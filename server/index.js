@@ -53,7 +53,7 @@ app.use(
 app.use("/api", routes);
 
 sequelize
-  .sync({ force: true })
+  .sync({ force: false })
   .then(() => {
     BlockSetting();
   })

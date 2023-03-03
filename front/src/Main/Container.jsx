@@ -59,11 +59,11 @@ const MainContainer = () => {
   };
 
   useEffect(() => {
-    setPage(btnLen - page + 1);
+    setPage(btnLen);
   }, [btnLen]);
 
   useEffect(() => {
-    setTxPage(txBtnLen - txPage + 1);
+    setTxPage(txBtnLen);
   }, [txBtnLen]);
 
   useEffect(() => {
