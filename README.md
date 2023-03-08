@@ -4,6 +4,8 @@
 
 ```bash
 BlockExplorer 사이트인 EtherScan을 참조하여 만든 사이트입니다.
+AWS 에 업로드 하기엔 free tier로는 geth를 돌리기에 문제가 있어 업로드 하지 못했습니다.
+현재 AWS EC2에서 t2.micro 인스턴스를 사용 중입니다만 최소 medium이상 사용하라고 확인했습니다.
 ```
 
 ---
