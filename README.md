@@ -8,6 +8,11 @@ AWS 에 업로드 하기엔 free tier로는 geth를 돌리기에 문제가 있�
 현재 AWS EC2에서 t2.micro 인스턴스를 사용 중입니다만 최소 medium이상 사용하라고 확인했습니다.
 ```
 
+- 주요 기능
+  1. 개인 체인 네트워크 상의 블록과 트랜젝션, 계좌정보들을 출력해줍니다.
+  2. 독립적인 기능들을 분리하려 노력해봤습니다.
+    - src의 util 폴더내에서 시간관리 함수, link위에 마우스 올렸을 때 해당 위치에 자세한 링크 띄우기 등등.
+
 ---
 <img src="/BlockExplorer1.png" alt="Img" width="45%"></img>
 <img src="/BlockExplorer2.png" alt="Img" width="45%"></img><br /><br /><br />
